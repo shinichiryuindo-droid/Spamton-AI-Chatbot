@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoBot</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Main container for the chat interface -->
+<div class="chat-container">
+
+
+  <div class = "chat-header">
+
+    <div class = "bot-info"> 
+      <img src="spamton.png" class="circle-icon">
+      <h2 style = "align-items: center;">Spamton G. Spamton</h2>
+    </div>
+
+  </div>
+
+<!-- Section to hold chat messages, dynamically updated with JavaScript -->
+ 
+  <div class = "chat-messages">
+
+  </div>
+
+<!-- Input area for user to type messages and send them -->
+
+  <div class = "chat-input">
+    <div class = "input-wrapper">
+      <div class = "message-input">
+        <textarea id = "userInput" placeholder="Type message..." rows = "1"></textarea>
+      </div>
+      <button id = "sendButton" class = "send-btn">
+        <i class = "fas fa-paper-plane"></i>
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+    <!-- Send button to submit the user's message -->
+
+    <!-- Import the Showdown library for converting Markdown to HTML -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"
+      integrity="sha512-LhccdVNGe2QMEfI3x4DVV3ckMRe36TfydKss6mJpdHjNFiV07dFpS2xzeZedptKZrwxfICJpez09iNioiSZ3hA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Link to external JavaScript file containing custom chat functionality -->
+     <script src = "script.js" type = "module"></script>
+  </body>
+</html>

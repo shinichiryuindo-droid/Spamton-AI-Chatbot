@@ -1,0 +1,220 @@
+/* Base styles for all elements to reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in width/height calculations */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Sets a consistent font */
+}
+
+/* Styles for the body element to center the chat container on the page */
+body {
+  background: #090909; /* Light gray background for the page */
+  height: 100vh; /* Full viewport height */
+  display: flex; /* Flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+/* Styles for the chat container, the main box that holds the chat */
+.chat-container {
+  width: 100%; /* Full width */
+  max-width: 1000px; /* Maximum width of the container */
+  height: 90vh; /* Occupies 90% of the viewport height */
+  background: rgb(72, 72, 72); /* White background */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  display: flex; /* Flex container */
+  flex-direction: column; /* Vertical layout */
+  overflow: hidden; /* Hides overflowed content */
+  margin: 20px; /* Margin around the container */
+}
+
+/* Header section at the top of the chat container */
+.chat-header {
+  display: flex;
+  padding: 20px; /* Padding around the header content */
+  background: #2f2f2f; /* Pink background for header */
+}
+
+.circle-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  gap: 10px;
+  object-fit: cover; /* Prevents distortion if image is not square */
+  border: 2px solid #ccc; /* Optional: adds a clean border border */
+}
+
+.bot-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #fffefe; /* White text color */
+}
+
+/* Bot information inside the chat header */s
+.bot-info h2 {
+  display: flex;
+  align-items: center;        /* Centers text vertically */
+  justify-content: center;    /* Optional: Centers text horizontally */
+  height: 200px;              /* Needs a height to see vertical centering */
+  border: 1px solid #ccc;
+}
+
+/* Chat messages area where user and bot messages appear */
+.chat-messages {
+  flex: 1; /* Takes up remaining vertical space */
+  overflow-y: auto; /* Allows vertical scrolling */
+  padding: 20px; /* Padding around the messages */
+  background: #1f1f1f; /* White background */
+}
+
+/* Wrapper for each message block */
+.message-wrapper {
+  display: flex; /* Flex layout for positioning */
+  margin-bottom: 20px; /* Space below each message */
+}
+
+/* Aligns user messages to the right */
+.message-wrapper.right {
+  justify-content: flex-end; /* Positions message to the right */
+}
+
+/* Basic structure for individual message bubbles */
+.message {
+  max-width: 65%; /* Maximum width of each message */
+  display: flex; /* Flex layout for internal elements */
+  flex-direction: column; /* Vertical alignment of content */
+}
+
+/* Message content styling (for both bot and user) */
+.message-content {
+  padding: 12px 16px; /* Inner padding for readability */
+  border-radius: 20px; /* Rounded corners for message bubble */
+  font-size: 0.95em; /* Slightly smaller font size */
+  line-height: 1.4; /* Line height for readability */
+}
+
+/* Specific styling for bot messages */
+.bot-message .message-content {
+  background: #2d2f3d; /* Light gray background for bot message */
+  color: #ffffff; /* Dark text color */
+  border-top-left-radius: 5px; /* Slight corner styling */
+}
+
+/* Specific styling for user messages */
+.user-message .message-content {
+  background: #c700de; /* Pink background for user message */
+  color: white; /* White text color */
+  border-top-right-radius: 5px; /* Slight corner styling */
+}
+
+/* Timestamp style for message time display */
+.message-time {
+  font-size: 0.75em; /* Small font size for time */
+  color: #5d5d5d; /* Light gray color for subtlety */
+  margin: 0 8px; /* Horizontal margin around timestamp */
+}
+
+/* Input area at the bottom of the chat container */
+.chat-input {
+  padding: 20px; /* Padding around the input area */
+  background: #19191d; /* White background */
+  border-top: 1px solid #262633; /* Top border to separate from messages */
+}
+
+/* Wrapper for styling the input and send button */
+.input-wrapper {
+  display: flex; /* Flex layout for horizontal alignment */
+  align-items: center; /* Center items vertically */
+  gap: 10px; /* Space between input and button */
+  background: #35373e; /* Light gray background */
+  padding: 8px 15px; /* Padding inside the wrapper */
+  border-radius: 25px; /* Rounded edges for the wrapper */
+}
+
+/* Style for the message input area */
+.message-input {
+  flex: 1; /* Expands to fill available space */
+}
+textarea {
+  color: #ffffff; /* Text you type */
+}
+
+textarea::placeholder {
+  color: #9aa0a6; /* Placeholder text */
+  opacity: 1;
+}
+
+/* Style for the text area where user types messages */
+textarea {
+  width: 100%; /* Full width */
+  border: none; /* Removes border */
+  background: transparent; /* Transparent background */
+  resize: none; /* Disables resize handle */
+  padding: 8px 0; /* Inner padding */
+  font-size: 0.95em; /* Font size */
+  max-height: 100px; /* Maximum height of the text area */
+  outline: none; /* Removes outline on focus */
+}
+
+/* Style for the send button */
+.send-btn {
+  background: none; /* No background color */
+  border: none; /* Removes border */
+  color: #4f7fff; /* Blue color */
+  font-size: 1.2em; /* Font size for icon */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  padding: 8px; /* Padding around the icon */
+  display: flex; /* Flex layout for centering icon */
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+/* Hover effect for the send button */
+.send-btn:hover {
+  color: #2851d4; /* Darker blue on hover */
+}
+
+/* Responsive styling for screens 768px or smaller */
+@media (max-width: 768px) {
+  .chat-container {
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Removes margin for fullscreen display */
+    border-radius: 0; /* Removes rounded corners */
+  }
+
+  .message {
+    max-width: 80%; /* Increases max width of messages */
+  }
+}
+
+/* Fade-in animation for messages */
+.message {
+  animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in animation */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Starts invisible */
+    transform: translateY(10px); /* Starts slightly lower */
+  }
+  to {
+    opacity: 1; /* Ends fully visible */
+    transform: translateY(0); /* Ends in original position */
+  }
+}
+
+/* Error message styling */
+.error-message .message-content {
+  background-color: #fee6e6; /* Light red background */
+  color: #ef4444; /* Red text color */
+}
+
+.error-message .message-content i {
+  margin-right: 6px; /* Space to the right of error icon */
+}
